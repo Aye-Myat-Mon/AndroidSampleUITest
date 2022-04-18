@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AndroidSampleUITest</string>
+    <string name="str_name">Furama Riverfront, \nSingapore</string>
+    <string name="str_address">405 Havelock Road, Singapore 169633</string>
+    <string name="str_see_all">See All %s/%s</string>
+    <string name="str_amenities">Amenities</string>
+    <string name="str_facilities">Facilities</string>
+    <string name="str_fnb">F&amp;B</string>
+    <string name="str_kids">Kids/family</string>
+    <string name="str_wellness">Wellness</string>
+    <string name="str_by_room">By Room</string>
+    <string name="str_by_rate">By Rates</string>
+    <string name="str_view_rate">View Rates</string>
+    <string name="str_room_type">Deluxe Twin</string>
+    <string name="str_room_detail">Twin Single Beds, Cable TV, Free Wifi…</string>
+    <string name="str_avg_room">Avg. Nightly/Room Form</string>
+    <string name="str_sgd">SGD</string>
+    <string name="str_price">161.42</string>
+    <string name="str_voucher_rate">YOUR VOUCHER RATE</string>
+    <string name="str_special_voucher">Mobile App Special Voucher</string>
+    <string name="str_breakfast">Inclusive of \nBreakfast</string>
+    <string name="str_promotion">20% off \nIn-Room Service</string>
+    <string name="str_subject">Subject to GST &amp; Service charge</string>
+    <string name="str_members_deal">MEMBERS DEALS</string>
+</resources>

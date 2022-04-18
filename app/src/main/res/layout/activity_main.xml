@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tb_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:navigationIcon="@drawable/ic_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:title="@null">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/iv_currency"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="20dp"
+                android:layout_marginEnd="@dimen/margin_16"
+                app:srcCompat="@drawable/currency"
+                android:layout_toStartOf="@id/iv_chat"
+                android:contentDescription="@null"/>
+
+            <ImageButton
+                android:id="@+id/iv_chat"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_16"
+                app:srcCompat="@drawable/chatactive"
+                android:contentDescription="@null"/>
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tb_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:fontFamily="@font/encode_sans_semi_bold"
+                android:text="@string/str_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_size_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/iv_next"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="20dp"
+                android:layout_marginEnd="@dimen/margin_16"
+                app:srcCompat="@drawable/nextred"
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_title_name"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_12"
+                android:fontFamily="@font/encode_sans_semi_medium"
+                android:text="@string/str_address"
+                android:textColor="@color/carbon_c_300"
+                android:textSize="@dimen/font_size_15"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_name"
+                app:layout_constraintStart_toStartOf="@id/tv_title_name"/>
+
+            <ImageButton
+                android:id="@+id/iv_location"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_12"
+                app:srcCompat="@drawable/currentlocation"
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_address"
+                app:layout_constraintTop_toTopOf="@id/tv_address"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_imageRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                app:layout_constraintTop_toBottomOf="@id/tv_address"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_see_all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/encode_sans_semi_medium"
+                android:textSize="@dimen/font_size_13"
+                android:textColor="@color/white"
+                android:background="@drawable/ic_see_all"
+                android:padding="@dimen/margin_8"
+                android:layout_marginHorizontal="@dimen/margin_24"
+                app:layout_constraintBottom_toBottomOf="@id/rv_imageRecycler"
+                app:layout_constraintEnd_toEndOf="@id/rv_imageRecycler"
+                android:text="See All 2/5" />
+
+            <LinearLayout
+                android:id="@+id/ll_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_24"
+                app:layout_constraintTop_toBottomOf="@id/rv_imageRecycler"
+                android:baselineAligned="false">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_amenities"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@null"
+                        app:srcCompat="@drawable/theme" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_amenities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encode_sans_semi_medium"
+                        android:text="@string/str_amenities"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/iv_amenities"
+                        android:textColor="@color/carbon_c_200"
+                        android:textSize="@dimen/font_size_13"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_facilities"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:srcCompat="@drawable/workout"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@null"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_facilities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encode_sans_semi_medium"
+                        android:text="@string/str_facilities"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/iv_facilities"
+                        android:textColor="@color/carbon_c_200"
+                        android:textSize="@dimen/font_size_13"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_fnb"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:srcCompat="@drawable/fnb"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@null"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_fnb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encode_sans_semi_medium"
+                        android:text="@string/str_fnb"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/iv_fnb"
+                        android:textColor="@color/carbon_c_200"
+                        android:textSize="@dimen/font_size_13"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_kids"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:srcCompat="@drawable/kidsfamily"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@null"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_kids"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encode_sans_semi_medium"
+                        android:text="@string/str_kids"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/iv_kids"
+                        android:textColor="@color/carbon_c_200"
+                        android:textSize="@dimen/font_size_13"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_wellness"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:srcCompat="@drawable/wellness"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@null"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_wellness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/encode_sans_semi_medium"
+                        android:text="@string/str_wellness"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/iv_wellness"
+                        android:textColor="@color/carbon_c_200"
+                        android:textSize="@dimen/font_size_13"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_custom_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginHorizontal="@dimen/margin_12"
+                app:layout_constraintTop_toBottomOf="@id/ll_services">
+
+                <include layout="@layout/custom_tab_layout" />
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_room_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_marginBottom="@dimen/margin_44"
+                app:layout_constraintTop_toBottomOf="@id/fl_custom_tab"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
